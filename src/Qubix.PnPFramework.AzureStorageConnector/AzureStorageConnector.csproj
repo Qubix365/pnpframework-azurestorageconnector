@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
+    <LangVersion>8.0</LangVersion>
+    <AssemblyName>Qubix.PnPFramework.AzureStorageConnector</AssemblyName>
+    <RootNamespace>Qubix.PnPFramework.Connectors</RootNamespace>
+    <Version>1.0.0</Version>
+    <Authors>Qubix,Yannick Reekmans</Authors>
+    <Copyright>Qubix 2021</Copyright>
+    <Title>AzureStorageConnector for PnP.Framework</Title>
+    <Description>FileConnector implementation for PnP.Framework, for files stored in Azure Blob Storage. Modernized from the deprecated code in the OfficeDevPnP.Core package.</Description>
+    <PackageIcon>nugeticon.png</PackageIcon>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryUrl>https://github.com/Qubix365/pnpframework-azurestorageconnector</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/Qubix365/pnpframework-azurestorageconnector</PackageProjectUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <Deterministic>true</Deterministic>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.0.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.2.0" />
+    <PackageReference Include="PnP.Framework" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="nugeticon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+</Project>
