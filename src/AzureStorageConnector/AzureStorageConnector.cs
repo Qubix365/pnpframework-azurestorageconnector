@@ -32,10 +32,11 @@ namespace Qubix.PnPFramework.Connectors
         }
 
         /// <summary>
-        /// AzureStorageConnector constructor. Allows to directly set Azure Storage key and container
+        /// AzureStorageConnector constructor. Allows to directly set Azure Storage name and container, and uses Azure.Identity to authenticate.
         /// </summary>
-        /// <param name="connectionString">Azure Storage Key (DefaultEndpointsProtocol=https;AccountName=yyyy;AccountKey=xxxx)</param>
-        /// <param name="container">Name of the Azure container to operate against</param>
+        /// <param name="credential">Credential (from Azure.Identity) that has access to the Storage Account</param>
+        /// <param name="storageAccountName">Name of the Azure container to operate against</param>
+        /// <param name="containerName">Name of the Azure container to operate against</param>
         public AzureStorageConnector(TokenCredential credential, string storageAccountName, string containerName) : base()
         {
             if (credential == null)
@@ -58,6 +59,11 @@ namespace Qubix.PnPFramework.Connectors
             this.AddParameterAsString(CONTAINER, containerName);
         }
 
+        /// <summary>
+        /// AzureStorageConnector constructor. Allows to directly set Azure Storage key and container
+        /// </summary>
+        /// <param name="connectionString">Azure Storage Key (DefaultEndpointsProtocol=https;AccountName=yyyy;AccountKey=xxxx)</param>
+        /// <param name="containerName">Name of the Azure container to operate against</param>
         public AzureStorageConnector(string connectionString, string containerName) : base()
         {
             if (string.IsNullOrEmpty(connectionString))
